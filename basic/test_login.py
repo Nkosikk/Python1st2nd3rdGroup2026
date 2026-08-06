@@ -1,5 +1,6 @@
 from telnetlib import EC
 
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -27,4 +28,6 @@ class TestLogin:
         self.driver.find_element(By.ID, self.password_id).send_keys("#12345678")
         self.driver.find_element(By.ID, self.login_button_id).click()
         wait.until(EC.visibility_of_element_located((By.XPATH, self.verify_dashboard_content_xpath))).is_displayed()
+
+        self.driver.close()
 
