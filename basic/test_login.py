@@ -24,8 +24,8 @@ class TestLogin:
 
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.visibility_of_element_located((By.XPATH, self.main_login_button_xpath))).click()
-        self.driver.find_element(By.ID, self.username_id).send_keys("nkwanyana@gmail.com")
-        self.driver.find_element(By.ID, self.password_id).send_keys("#12345678")
+        self.driver.find_element(By.ID, self.username_id).send_keys("noxolo.demo@gmail.com")
+        self.driver.find_element(By.ID, self.password_id).send_keys("password9%")
         self.driver.find_element(By.ID, self.login_button_id).click()
         wait.until(EC.visibility_of_element_located((By.XPATH, self.verify_dashboard_content_xpath))).is_displayed()
 
