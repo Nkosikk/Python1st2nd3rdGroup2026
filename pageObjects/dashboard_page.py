@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class home_page:
+class dashboard_page:
 
-    main_login_button_xpath = "//div[@class='nav-user-section']"
+    welcome_back_xpath = "//h2"
 
     def __init__(self, driver):
         self.driver = driver
 
-    def login(self):
+    def verify_dashboard_page(self):
         wait = WebDriverWait(self.driver, 10)
-        wait.until(self.driver.find_element(By.XPATH,self.main_login_button_xpath).click())
+        wait.until(self.driver.find_element(By.XPATH,self.welcome_back_xpath).is_displayed())
