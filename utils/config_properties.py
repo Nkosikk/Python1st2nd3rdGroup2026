@@ -1,6 +1,6 @@
 import configparser
 
-config = configparser.RawConfigParser
+config = configparser.RawConfigParser()
 config.read("./Configurations/commonDetails.ini")
 
 class ReadConfig_CommonDetails():
