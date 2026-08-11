@@ -1,6 +1,7 @@
+import pytest
 from selenium import webdriver
 
-
+@pytest.fixture
 def setup(browser):
 
     #Initialize the WebDriver based on the browser name provided
@@ -19,8 +20,13 @@ def setup(browser):
     #Returning the WebDriver instance
     return driver
 
+
 def pytest_addoption(parser):
     #Add a command-line option "--browser" to specify the browser
     parser.addoption("--browser")
+
+@pytest.fixture
+def browser(request):
+    return request.config.getoption("--browser")
 
 
