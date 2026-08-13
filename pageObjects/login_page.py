@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 class LoginPage:
 
@@ -12,7 +13,7 @@ class LoginPage:
 
     def getUsername(self, username ):
         wait = WebDriverWait(self.driver, 10)
-        wait.until(self.driver.find_element(By.ID ,self.username_id)).send_keys(username)
+        wait.until(expected_conditions.visibility_of_element_located((By.ID ,self.username_id))).send_keys(username)
 
     def getPassword(self, password ):
         self.driver.find_element(By.ID,self.password_id).send_keys(password)

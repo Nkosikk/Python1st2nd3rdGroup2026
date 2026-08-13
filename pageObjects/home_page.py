@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
 
 
 class Home_page:
@@ -11,4 +13,4 @@ class Home_page:
 
     def click_main_login_button(self):
         wait = WebDriverWait(self.driver, 10)
-        wait.until(self.driver.find_element(By.XPATH,self.main_login_button_xpath).click())
+        wait.until(EC.visibility_of_element_located((By.XPATH,self.main_login_button_xpath))).click()
