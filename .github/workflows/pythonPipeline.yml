@@ -1,4 +1,4 @@
-name: Python application
+name: Selenium Automation CI
 
 # Run this workflow when code is pushed to main or a PR targets main.
 on:
